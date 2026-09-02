@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MathGameguel.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30,0" Spacing="25">
+            <Label Text="Desafio Matemático" FontSize="32"
+         HorizontalOptions="Center"
+         VerticalOptions="Start"
+         TextColor="{StaticResource VeryPeri}"/>
+
+
+            <Image Source="mathlogo.png" Aspect="Center"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"/>
+
+            <Label Text="Resolva a equação abaixo:" FontSize="18"
+            HorizontalOptions="Center" VerticalOptions="Center"/>
+
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                <Label x:Name="lb1" Text="5" Style="{StaticResource MinhaLabel}"/>
+                <Label x:Name="lb2" Text="X" Style="{StaticResource MinhaLabel}"/>
+                <Label x:Name="lb3" Text="5" Style="{StaticResource MinhaLabel}"/>
+            </HorizontalStackLayout>
+
+            <Entry x:Name="txR" Placeholder="Digite a resposta aqui..."
+            Keyboard="Numeric"/>
+
+            <Button x:Name="btOK" Text="Validar resposta"
+             Clicked="btOK_Clicked"/>
+
+            <HorizontalStackLayout HorizontalOptions="Start" Spacing="10">
+                <Button x:Name="Facil" Text="Facil" Clicked="Facil_Clicked" WidthRequest="45" HeightRequest="45" Padding="0" CornerRadius="4"/>
+                <Button x:Name="medio" Text="Medio" Clicked="medio_Clicked" WidthRequest="45" HeightRequest="45" Padding="0" CornerRadius="4"/>
+                <Button x:Name="dificl" Text="Dificil" Clicked="dificl_Clicked" WidthRequest="45" HeightRequest="45" Padding="0" CornerRadius="4"/>
+            </HorizontalStackLayout>
+
+            <Image x:Name="imR"
+            Source="question.png"
+            Aspect="Center"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"/>
+
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                <Label x:Name="lbAcertou" FontSize="30" Text="Acertos: 0"/>
+                <Label x:Name="lbErrou" FontSize="30" Text="Erros: 0"/>
+
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
