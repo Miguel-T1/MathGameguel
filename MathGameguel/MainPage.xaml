@@ -14,7 +14,47 @@
             <Image Source="mathlogo.png" Aspect="Center"
             HorizontalOptions="Center"
             VerticalOptions="Center"/>
+            <Label Text="Escolha as operações:"
+       FontSize="18"
+       HorizontalOptions="Center"/>
 
+            <Grid ColumnDefinitions="Auto,Auto,Auto,Auto"
+      ColumnSpacing="12"
+      HorizontalOptions="Center">
+
+                <HorizontalStackLayout Grid.Column="0">
+                    <CheckBox x:Name="cbAdicao"
+                  IsChecked="True"/>
+
+                    <Label Text="+"
+               VerticalTextAlignment="Center"/>
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout Grid.Column="1">
+                    <CheckBox x:Name="cbSubtracao"
+                  IsChecked="True"/>
+
+                    <Label Text="-"
+               VerticalTextAlignment="Center"/>
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout Grid.Column="2">
+                    <CheckBox x:Name="cbMultiplicacao"
+                  IsChecked="True"/>
+
+                    <Label Text="×"
+               VerticalTextAlignment="Center"/>
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout Grid.Column="3">
+                    <CheckBox x:Name="cbDivisao"
+                  IsChecked="True"/>
+
+                    <Label Text="÷"
+               VerticalTextAlignment="Center"/>
+                </HorizontalStackLayout>
+
+            </Grid>
             <Label Text="Resolva a equação abaixo:" FontSize="18"
             HorizontalOptions="Center" VerticalOptions="Center"/>
 
@@ -24,8 +64,26 @@
                 <Label x:Name="lb3" Text="5" Style="{StaticResource MinhaLabel}"/>
             </HorizontalStackLayout>
 
+            <Label x:Name="lbTempo"
+       Text="Tempo: 30s"
+       FontSize="22"
+       FontAttributes="Bold"
+       TextColor="Green"
+       HorizontalOptions="Center"/>
+
+            <Label x:Name="lbQuestao"
+       Text="Questão 1 de 10"
+       FontSize="18"
+       HorizontalOptions="Center"/>
+
+            <ProgressBar x:Name="pbProgresso"
+             Progress="0"
+             ProgressColor="Blue"
+             HeightRequest="8"/>
+
+
             <Entry x:Name="txR" Placeholder="Digite a resposta aqui..."
-            Keyboard="Numeric"/>
+            Keyboard="Numeric"  TextChanged="txR_TextChanged"/>
 
             <Button x:Name="btOK" Text="Validar resposta"
              Clicked="btOK_Clicked"/>
@@ -41,7 +99,14 @@
             Aspect="Center"
             HorizontalOptions="Center"
             VerticalOptions="Center"/>
-
+            
+            <Label x:Name="lbPontuacao"
+       Text="Pontos: 0"
+       FontSize="22"
+       FontAttributes="Bold"
+       HorizontalOptions="Center"
+       TextColor="Blue"/>
+            
             <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
                 <Label x:Name="lbAcertou" FontSize="30" Text="Acertos: 0"/>
                 <Label x:Name="lbErrou" FontSize="30" Text="Erros: 0"/>
